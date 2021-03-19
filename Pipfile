@@ -17,4 +17,4 @@ python_version = "3.9"
 
 [scripts]
 dev = "uvicorn main:app --workers 4 --port 3000 --reload"
-start = "gunicorn --bind 0.0.0.0:3000 -w 4 -k uvicorn.workers.UvicornWorker main:app"
+start = "gunicorn --bind 0.0.0.0:$PORT -w 4 -k uvicorn.workers.UvicornWorker main:app"
