@@ -28,6 +28,53 @@ def scrape_multiple(url: str, regex: str, groups: list[str]) -> dict[str, str]:
     ]
 
 
+def fetch_latest_version(*, wikies: bool = False, lang: str = None, wikitype: str = None, dumps: bool = False, start: str = None, end: str = None) -> Optional[dict[str, Any]]:
+    """Fetch the last version of the wikimedia history dump
+
+    The version is the year-month of the release of the dumps
+
+    Keyword parameters:
+    wikies (bool, default=False): If for each returned version the wikies will be fetched
+    lang (str, default=None): If the wikies argument is True, the language of the wikies to return (a wiki name starts with the language).
+    wikitype (str, default=None): If the wikies argument is True, the wiki type of the wikies to return (a wiki name ends with the wiki type).
+    dumps (bool, default=false): If for each returned wiki the wikies will be fetched
+    start (date, default=None): If the wikies and dumps arguments are True, retrieve only the dumps newer than this date
+    end (date, default=None): If the wikies and dumps arguments are True, retrieve only the dumps older than this date
+
+    Returns:
+    dict:   A dict with "version" (str) for the version year-month and "url" (str) for the url of that version.
+            In addition, "wikies" will contain the fetched wikies if the argument was set to True.
+            If no version is found, None is returned.
+    """
+
+    # assign url and regex
+    url = WIKI_URL
+    regex = r'<a href="(?P<version>\d+-\d+)\/">'
+    # fetch versions
+    versions = scrape(url, regex)
+    # if no version is found, return None
+    if not versions:
+        return None
+    # get the last version
+    versions.sort(reverse=True)
+    last_version = versions[0]
+    # get list of resulting objects
+    result = {
+        'version': last_version,
+        'url': f'{url}/{last_version}'
+    }
+    # if include wikies, do it
+    if wikies:
+        result = [
+            {
+                **result,
+                'wikies': fetch_wikies(result['version'], lang=lang, wikitype=wikitype, dumps=dumps, start=start, end=end)
+            }
+        ]
+    # return result
+    return result
+
+
 def fetch_versions(*, wikies: bool = False, lang: str = None, wikitype: str = None, dumps: bool = False, start: str = None, end: str = None) -> list[dict[str, Any]]:
     """Fetch the versions of the wikimedia history dump
 
@@ -74,7 +121,7 @@ def fetch_wikies(version: str, /, *, lang: Optional[str] = None, wikitype: Optio
     """Fetch the wikies of a version of the wikimedia history dump
 
     Parameters:
-    version (str): The version whose wikies will be returned
+    version (str): The version whose wikies will be returned. If "latest" is passed, the latest version is retrieved.
 
     Keyword parameters:
     lang (str, default=None): The language of the wikies to return (a wiki name starts with the language).
@@ -87,7 +134,8 @@ def fetch_wikies(version: str, /, *, lang: Optional[str] = None, wikitype: Optio
     list:   A list of dicts with "wiki" (str) for the wiki name and "url" (str) for the url of that wiki.
             In addition, if the "dumps" argument is True, a "dumps" (list) field contain the fetched dumps.
     """
-
+    # if version is "latest", get the latest version
+    version = fetch_latest_version()['version'] if version == 'latest' else version
     # assign url and regex
     url = f'{WIKI_URL}/{version}'
     regex = r'<a href="(?P<wiki>\w+)\/">'
