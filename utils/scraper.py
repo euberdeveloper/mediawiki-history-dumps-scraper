@@ -197,6 +197,8 @@ def fetch_dumps(version: str, wiki: str, /, *, start: Optional[date] = None, end
             else:
                 return {'from': date(year, 1, 1), 'to': date(year, 12, 31)}
 
+    # if version is "latest", get the latest version
+    version = fetch_latest_version()['version'] if version == 'latest' else version
     # assign url and regex
     url = f'{WIKI_URL}/{version}/{wiki}'
     regex = fr'<a href="(?P<filename>{version}\.{wiki}\.(?P<time>[\w\d-]+)\.tsv\.bz2)">.*</a>\s+(?P<lastUpdate>\d{{2}}-\w{{3}}-\d{{4}} \d{{2}}:\d{{2}})\s+(?P<bytes>\d+)'
