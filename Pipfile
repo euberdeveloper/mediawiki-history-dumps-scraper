@@ -6,11 +6,11 @@ verify_ssl = true
 [packages]
 fastapi = "*"
 requests = "*"
-uvicorn = "*"
+gunicorn = "*"
+uvicorn = {extras = ["standard"], version = "*"}
 
 [dev-packages]
 flake8 = "*"
-gunicorn = "*"
 
 [requires]
 python_version = "3.9"
