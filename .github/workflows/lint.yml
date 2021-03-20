@@ -1,0 +1,26 @@
+name: Lint
+on:
+  push:
+    branches:
+      - python-server
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Install dependecies
+        uses: VaultVulp/action-pipenv@v2.0.1
+        with:
+          command: install -d
+
+      - name: Lint
+        uses: VaultVulp/action-pipenv@v2.0.1
+        with:
+          command: run lint
