@@ -17,11 +17,7 @@ module.exports = {
             {
                 test: /\.ts?$/,
                 include: path.resolve(__dirname, 'source'),
-                use: [
-                    {
-                        loader: 'ts-loader'
-                    }
-                ]
+                use: [{ loader: 'ts-loader' }]
             }
         ]
     },
