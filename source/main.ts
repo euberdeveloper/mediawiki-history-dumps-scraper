@@ -10,6 +10,8 @@ import asyncHandler from './utils/asyncHandler';
 import errorHandler from './utils/errorHandler';
 import { parseDumpQueryParams, parseVersionQueryParams, parseWikiQueryParams } from './utils/queryParams';
 
+const PORT = process.env.PORT ?? 3000;
+
 const logger = new Logger();
 
 const app = express();
@@ -64,6 +66,6 @@ app.get(
     })
 );
 
-app.listen(3000, () => {
-    logger.info('Server listening at port', 3000);
+app.listen(PORT, () => {
+    logger.info('Server listening at port', PORT);
 });
