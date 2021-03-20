@@ -3,3 +3,4 @@ dist
 bundled
 .nyc_output
 coverage
+docs
