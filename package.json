@@ -5,6 +5,7 @@
   "main": "bundled/index.js",
   "types": "bundled/index.d.ts",
   "scripts": {
+    "postinstall": "npm run transpile",
     "clean": "shx rm -rf dist bundled",
     "transpile": "tsc -p source",
     "pretranspile": "npm run clean",
