@@ -1,5 +1,5 @@
 {
-  "name": "whdt-scraper",
+  "name": "whdtscraper",
   "version": "1.0.0",
   "description": "Wikimedia history dump tsv scraper, a module that scrapes the site and returns to you the available content.",
   "main": "bundled/index.js",

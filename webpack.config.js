@@ -27,7 +27,7 @@ module.exports = {
     },
     plugins: [
         new DtsBundleWebpack({
-            name: 'whdt-scraper',
+            name: 'whdtscraper',
             main: 'dist/index.d.ts',
             out: '../bundled/index.d.ts'
         })
@@ -36,7 +36,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './bundled'),
         filename: 'index.js',
-        library: 'whdt-scraper',
+        library: 'whdtscraper',
         libraryTarget: 'umd',
         globalObject: 'this',
         umdNamedDefine: true,
