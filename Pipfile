@@ -5,9 +5,9 @@ verify_ssl = true
 
 [packages]
 fastapi = "*"
-requests = "*"
 gunicorn = "*"
 uvicorn = {extras = ["standard"], version = "*"}
+whdtscraper = "*"
 
 [dev-packages]
 flake8 = "*"
