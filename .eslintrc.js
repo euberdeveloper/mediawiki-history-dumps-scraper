@@ -12,6 +12,6 @@ module.exports = {
         'plugin:prettier/recommended'
     ],
     rules: {
-        '@typescript-eslint/no-use-before-define': 'off'
+        '@typescript-eslint/no-misused-promises': 'off'
     }
 };
