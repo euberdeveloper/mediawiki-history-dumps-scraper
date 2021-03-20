@@ -177,7 +177,7 @@ def fetch_dumps(version: str, wiki: str, /, *, start: Optional[date] = None, end
     Returns:
     list:   A list of dicts with "filename" (str) for dump file name, "time" (str) for the time of the data ("all-time", year or year-month),
             "lastUpdate" (datetime) for the last update date, "bytes" (int) for the size in bytes of the file,
-            "from" (date) for the start date of the data and "to (date) for the end date of the data.
+            "from" (date) for the start date of the data and "to (date) for the end date of the data, "url" (string) the url of the file.
     """
 
     def last_month_day(month: int):
