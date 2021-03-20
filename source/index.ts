@@ -2,6 +2,7 @@ import { Dump, Wiki, Version, DumpOptions, WikiOptions, VersionOptions } from '.
 import { scrape, scrapeMultiple, WIKI_URL } from './utils';
 
 export * from './types';
+export { WIKI_URL };
 
 /**
  * Fetches the dumps of a wiki of the wikimedia history dump
