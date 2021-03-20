@@ -26,10 +26,10 @@ export async function fetchDumps(version: string, wiki: string, options: DumpOpt
 
         return month
             ? {
-                  from: new Date(year, month, 1),
-                  to: new Date(year, month, lastMonthDay(month))
+                  from: new Date(year, month - 1, 1),
+                  to: new Date(year, month - 1, lastMonthDay(month - 1))
               }
-            : { from: new Date(year, 1, 1), to: new Date(year, 12, 31) };
+            : { from: new Date(year, 0, 1), to: new Date(year, 11, 31) };
     }
 
     if (version === 'latest') {
