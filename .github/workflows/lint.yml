@@ -22,10 +22,10 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install pipenv
-        uses: pip install pipenv
+        run: pip install pipenv
 
       - name: Install python dependencies
         run: pipenv install
-        
+
       - name: Lint code
         run: pipenv run lint
