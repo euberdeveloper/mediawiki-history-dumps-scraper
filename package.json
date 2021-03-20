@@ -1,5 +1,5 @@
 {
-  "name": "whdtscraper",
+  "name": "whdtscraper-server",
   "version": "1.0.0",
   "description": "Wikimedia history dump tsv scraper, a module that scrapes the site and returns to you the available content.",
   "main": "bundled/index.js",
@@ -33,27 +33,30 @@
   "license": "ISC",
   "devDependencies": {
     "@euberdeveloper/eslint-config-typescript": "^4.7.0",
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.11",
+    "@types/morgan": "^1.9.2",
     "@types/node": "^14.14.35",
     "commitizen": "^4.2.3",
     "cz-conventional-changelog": "^3.2.0",
-    "dts-bundle-webpack": "^1.0.2",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1",
     "shx": "^0.3.3",
-    "ts-loader": "^8.0.18",
-    "typescript": "^4.2.3",
-    "webpack": "^5.27.0",
-    "webpack-cli": "^4.5.0",
-    "webpack-node-externals": "^2.5.2"
-  },
-  "dependencies": {
-    "axios": "^0.21.1"
+    "typescript": "^4.2.3"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "compress": "^0.99.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "morgan": "^1.10.0",
+    "whdtscraper": "^1.0.0"
   }
 }

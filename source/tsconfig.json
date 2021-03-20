@@ -6,11 +6,9 @@
         "lib": [
             "es2020"
         ],
-        "resolveJsonModule": true,
         "strictNullChecks": true,
         "sourceMap": true,
         "declaration": true,
-        "downlevelIteration": true,
         "baseUrl": ".",
         "paths": {
             "@/*": [
