@@ -209,7 +209,7 @@ def fetch_dumps(version: str, wiki: str, /, *, start: Optional[date] = None, end
         **dump,
         **parse_time(dump['time']),
         'lastUpdate': datetime.strptime(dump['lastUpdate'], '%d-%b-%Y %H:%M'),
-        'link': f'{url}/{dump["filename"]}'
+        'url': f'{url}/{dump["filename"]}'
     } for dump in dumps]
     # filter element by start and end
     if start is not None:
