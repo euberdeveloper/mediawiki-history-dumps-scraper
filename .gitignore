@@ -1,6 +1,3 @@
 node_modules
 dist
-bundled
-.nyc_output
-coverage
 docs
