@@ -2,7 +2,6 @@ import * as express from 'express';
 import * as helmet from 'helmet';
 import * as morgan from 'morgan';
 import * as cors from 'cors';
-import * as compression from 'compression';
 import { Logger } from 'euberlog';
 import { WIKI_URL, fetchLatestVersion, fetchVersions, fetchWikies, fetchDumps } from 'whdtscraper';
 
@@ -16,7 +15,6 @@ const logger = new Logger();
 
 const app = express();
 
-app.use(compression());
 app.use(cors());
 app.use(helmet());
 app.use(morgan('dev'));
