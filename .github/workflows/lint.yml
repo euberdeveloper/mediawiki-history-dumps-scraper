@@ -28,9 +28,6 @@ jobs:
 
       - name: Install python dependencies
         run: poetry install
-
-      - name: Start poetry env
-        run: poetry shell
         
       - name: Lint code
-        run: flake8
+        run: poetry run flake8
