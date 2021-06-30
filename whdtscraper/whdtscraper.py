@@ -181,7 +181,6 @@ def fetch_dumps(version: str, wiki: str, /, *, start: Optional[date] = None, end
     """
 
     def last_month_day(month: int):
-
         d = date(1999, (month % 12) + 1, 1) - timedelta(days=1)
         return d.day
 
