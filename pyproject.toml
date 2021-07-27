@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "whdtscraper"
-version = "1.0.2"
+version = "1.0.3"
 description = "Wikimedia history dump tsv scraper, a module that scrapes the site and returns to you the available content."
 authors = ["Eugenio Berretta <euberdeveloper@gmail.com>"]
 keywords = ["wikimedia", "wikimedia-history-dump", "tsv", "scraper"]
