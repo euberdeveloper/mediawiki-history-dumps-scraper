@@ -3,7 +3,7 @@ import requests
 from datetime import datetime, date, timedelta
 from typing import Optional, Any, Union, Literal
 
-WIKI_URL = 'https://dumps.wikimedia.org/other/mediawiki_history'
+WIKI_URL = 'https://dumps.mediawiki.org/other/mediawiki_history'
 
 
 def _scrape(url: str, regex: str) -> list[str]:
@@ -29,7 +29,7 @@ def _scrape_multiple(url: str, regex: str, groups: list[str]) -> dict[str, str]:
 
 
 def fetch_latest_version(*, wikies: bool = False, lang: str = None, wikitype: str = None, dumps: bool = False, start: str = None, end: str = None) -> Optional[dict[str, Any]]:
-    """Fetch the last version of the wikimedia history dumps
+    """Fetch the last version of the mediawiki history dumps
 
     The version is the year-month of the release of the dumps
 
@@ -76,7 +76,7 @@ def fetch_latest_version(*, wikies: bool = False, lang: str = None, wikitype: st
 
 
 def fetch_versions(*, wikies: bool = False, lang: str = None, wikitype: str = None, dumps: bool = False, start: str = None, end: str = None) -> list[dict[str, Any]]:
-    """Fetch the versions of the wikimedia history dump
+    """Fetch the versions of the mediawiki history dumps
 
     The versions are the year-month of the release of the dumps
 
@@ -118,7 +118,7 @@ def fetch_versions(*, wikies: bool = False, lang: str = None, wikitype: str = No
 
 
 def fetch_wikies(version: str, /, *, lang: Optional[str] = None, wikitype: Optional[str] = None, dumps: bool = False, start: str = None, end: str = None) -> list[dict[str, Any]]:
-    """Fetch the wikies of a version of the wikimedia history dump
+    """Fetch the wikies of a version of the mediawiki history dumps
 
     Parameters:
     version (str): The version whose wikies will be returned. If "latest" is passed, the latest version is retrieved.
@@ -164,7 +164,7 @@ def fetch_wikies(version: str, /, *, lang: Optional[str] = None, wikitype: Optio
 
 
 def fetch_dumps(version: str, wiki: str, /, *, start: Optional[date] = None, end: Optional[date] = None) -> list[dict[str, Any]]:
-    """Fetch the dumps of a wiki of the wikimedia history dump
+    """Fetch the dumps of a wiki of the mediawiki history dumps
 
     Parameters:
     version (str): The version of the wiki
