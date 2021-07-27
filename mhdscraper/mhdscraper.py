@@ -29,7 +29,7 @@ def _scrape_multiple(url: str, regex: str, groups: list[str]) -> dict[str, str]:
 
 
 def fetch_latest_version(*, wikies: bool = False, lang: str = None, wikitype: str = None, dumps: bool = False, start: str = None, end: str = None) -> Optional[dict[str, Any]]:
-    """Fetch the last version of the wikimedia history dump
+    """Fetch the last version of the wikimedia history dumps
 
     The version is the year-month of the release of the dumps
 
