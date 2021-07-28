@@ -1,7 +1,7 @@
 import re
-import requests
 from datetime import datetime, date, timedelta
 from typing import Optional, Any, Union, Literal
+import requests
 
 WIKI_URL = 'https://dumps.wikimedia.org/other/mediawiki_history'
 
@@ -181,19 +181,19 @@ def fetch_dumps(version: str, wiki: str, /, *, start: Optional[date] = None, end
     """
 
     def last_month_day(month: int):
-        d = date(1999, (month % 12) + 1, 1) - timedelta(days=1)
-        return d.day
+        temp_date = date(1999, (month % 12) + 1, 1) - timedelta(days=1)
+        return temp_date.day
 
     def parse_time(time: str) -> dict[Optional[Union[date, Literal['all-time']]]]:
-        if (time == 'all-time'):
+        if time == 'all-time':
             return {'from': None, 'to': None}
         month_and_year = time.split('-')
         year = int(month_and_year[0])
         if len(month_and_year) > 1:
             month = int(month_and_year[1])
             return {'from': date(year, month, 1), 'to': date(year, month, last_month_day(month))}
-        else:
-            return {'from': date(year, 1, 1), 'to': date(year, 12, 31)}
+
+        return {'from': date(year, 1, 1), 'to': date(year, 12, 31)}
 
     # if version is "latest", get the latest version
     version = fetch_latest_version()['version'] if version == 'latest' else version
