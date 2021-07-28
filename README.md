@@ -38,7 +38,7 @@ async function main() {
         wikies: true
     });
 
-    // Returns an array containing all the wikies of the latest version, 
+    // Returns an array containing all the wikies of the latest version,
     // returning name and url
     const wikies = await mhdscraper.fetchWikies('latest');
     // Returns an array containing the wikies ending with 'wiki' of the 
