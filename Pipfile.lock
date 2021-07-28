@@ -101,11 +101,11 @@
         },
         "mhdscraper": {
             "hashes": [
-                "sha256:4e93f50c696ec91eedb8c6eff196ecf58531847391d4d7d6c6a2f9439e90d3a4",
-                "sha256:7a07c7a76209cc4d47481d5aa4d86352cd0365f7221fd7b0b26b5eedc070a2d2"
+                "sha256:8e5369eee8aa08b6829ebb9d424dc283bbc835e31d37962c128762c2e1fdd9ec",
+                "sha256:f186a958daa4e23390194bec648a28d7c0046a99cca43f690bea012f117a07a4"
             ],
             "index": "pypi",
-            "version": "==1.0.0"
+            "version": "==1.0.2"
         },
         "pydantic": {
             "hashes": [
