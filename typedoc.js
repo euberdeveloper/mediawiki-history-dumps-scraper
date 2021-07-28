@@ -2,7 +2,7 @@ module.exports = {
     entryPoints: [
         './source/index.ts'
     ],
-    name: 'whdtscraper',
+    name: 'mhdscraper',
     excludeExternals: true,
     includeVersion: true,
     tsconfig: 'source/tsconfig.json',
