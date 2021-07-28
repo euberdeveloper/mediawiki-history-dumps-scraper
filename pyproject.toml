@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mhdscraper"
-version = "1.0.2"
+version = "1.0.3"
 description = "Mediawiki history dumps scraper, a module that scrapes the site of \"Mediawiki history dumps\" and returns to you the available content."
 authors = ["Eugenio Berretta <euberdeveloper@gmail.com>"]
 keywords = ["mediawiki", "mediawiki-history-dumps", "tsv", "scraper", "wikipedia", "wikimedia"]
