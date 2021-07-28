@@ -1,0 +1,5 @@
+node_modules
+bundled
+.venv
+dist
+__pycache__
