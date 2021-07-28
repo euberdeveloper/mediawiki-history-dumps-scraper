@@ -3,7 +3,7 @@ import * as helmet from 'helmet';
 import * as morgan from 'morgan';
 import * as cors from 'cors';
 import { Logger } from 'euberlog';
-import { WIKI_URL, fetchLatestVersion, fetchVersions, fetchWikies, fetchDumps } from 'whdtscraper';
+import { WIKI_URL, fetchLatestVersion, fetchVersions, fetchWikies, fetchDumps } from 'mhdscraper';
 
 import asyncHandler from './utils/asyncHandler';
 import errorHandler from './utils/errorHandler';
