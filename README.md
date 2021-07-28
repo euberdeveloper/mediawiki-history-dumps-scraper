@@ -12,6 +12,8 @@ This API are written in **Python 3.9** and use **FastAPI** as framework. The pac
 
 ## How to use it?
 
+### Locally
+
 1. Clone this repository 
 
     `git clone https://github.com/euberdeveloper/mediawiki-history-dumps-scraper.git`
@@ -29,6 +31,15 @@ This API are written in **Python 3.9** and use **FastAPI** as framework. The pac
 
     `pipenv run start`
 5. The api are now listening at `http://localhost:3000` (note that for the production you need to specify a `PORT` env var)
+
+
+### With docker
+
+You can build on yourown the docker image by using the Dockerfile in the repository. 
+
+Alternatively, you can pull the image from the dockerhub repo `euberdeveloper/mhdscraper-python`. 
+
+Note that the `PORT` env var is mandatory.
 ## API
 
 ### /origin

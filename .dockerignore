@@ -1,0 +1,7 @@
+.git
+.github
+.venv
+.vscode
+.gitignore
+Dockerfile
+Procfile
