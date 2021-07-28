@@ -5,6 +5,37 @@ export * from './types';
 export { WIKI_URL };
 
 /**
+ *  Returns the last day of a month
+ *  @param year The year of which you want to compute the last month day
+ *  @param month The month of which you want to compute the last day
+ *  @retrurns The last day of the month
+ */
+function lastMonthDay(year: number, month: number): number {
+    return new Date(year, month + 1).getMonth();
+}
+
+/**
+ * Parses the time extracted by the scraper and returns the analogue details object
+ * @param time The time extracted by the scraper
+ * @returns The parsed time as an object
+ */
+function parseTime(time: string): { from: Date | null; to: Date | null } {
+    if (time === 'all-time') {
+        return { from: null, to: null };
+    }
+
+    const monthAndYear = time.split('-').map(el => +el);
+    const [year, month] = monthAndYear;
+
+    return month
+        ? {
+              from: new Date(year, month - 1, 1),
+              to: new Date(year, month - 1, lastMonthDay(year, month - 1))
+          }
+        : { from: new Date(year, 0, 1), to: new Date(year, 11, 31) };
+}
+
+/**
  * Fetches the dumps of a wiki of the mediawiki history dumps
  * @param version The version of the wiki (yyyy-mm or 'latest')
  * @param wiki The wiki whose dumps will be returned (e.g. 'itwiki')
@@ -12,26 +43,6 @@ export { WIKI_URL };
  * @returns The fetched dumps
  */
 export async function fetchDumps(version: string, wiki: string, options: DumpOptions = {}): Promise<Dump[]> {
-    function lastMonthDay(month: number): number {
-        return new Date(1999, month + 1).getMonth();
-    }
-
-    function parseTime(time: string): { from: Date | null; to: Date | null } {
-        if (time === 'all-time') {
-            return { from: null, to: null };
-        }
-
-        const monthAndYear = time.split('-').map(el => +el);
-        const [year, month] = monthAndYear;
-
-        return month
-            ? {
-                  from: new Date(year, month - 1, 1),
-                  to: new Date(year, month - 1, lastMonthDay(month - 1))
-              }
-            : { from: new Date(year, 0, 1), to: new Date(year, 11, 31) };
-    }
-
     if (version === 'latest') {
         const latestVersion = (await fetchLatestVersion())?.version;
         if (!latestVersion) {
