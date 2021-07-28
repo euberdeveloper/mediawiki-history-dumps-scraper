@@ -4,7 +4,7 @@ This is the **pip** module of "Mediawiki history dumps scraper", refer to the [m
 
 ## What does the module do?
 
-This pip module allow you to get (also selectively), through a **scraper**, the available content in [Mediawiki history dumps](https://dumps.wikimedia.org/other/mediawiki_history/readme.html). You can check wich versions are available, which language, which datasets, the download links, the size...
+This pip module allows you to get (also selectively), through a **scraper**, the available content in [Mediawiki history dumps](https://dumps.wikimedia.org/other/mediawiki_history/readme.html). You can check wich versions are available, which language, which datasets, the download links, the size...
 
 ## How was it made?
 
