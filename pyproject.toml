@@ -1,0 +1,6 @@
+[tool.autopep8]
+max_line_length = 200
+
+[tool.pylint.FORMAT]
+max-line-length = 200
+disable = "C0114,C0116,R0913"

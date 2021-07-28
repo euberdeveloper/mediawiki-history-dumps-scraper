@@ -1,7 +1,7 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 from datetime import date
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 import whdtscraper
 
