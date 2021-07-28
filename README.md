@@ -40,6 +40,11 @@ You can build on yourown the docker image by using the Dockerfile in the reposit
 Alternatively, you can pull the image from the dockerhub repo `euberdeveloper/mhdscraper-python`. 
 
 Note that the `PORT` env var is mandatory.
+
+### With heroku
+
+I have published these API with Heroku at [https://mhdscraper-python.herokuapp.com](https://mhdscraper-python.herokuapp.com).
+However, Heroku for free has limited minutes and probably sometimes it will be down.
 ## API
 
 ### /origin
