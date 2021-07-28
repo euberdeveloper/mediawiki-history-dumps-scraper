@@ -1,7 +1,7 @@
 {
-  "name": "whdtscraper",
-  "version": "1.1.2",
-  "description": "Wikimedia history dump tsv scraper, a module that scrapes the site and returns to you the available content.",
+  "name": "mhdscraper",
+  "version": "1.0.0",
+  "description": "Mediawiki history dumps scraper, a module that scrapes the site and returns to you the available content.",
   "main": "bundled/index.js",
   "types": "bundled/index.d.ts",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/euberdeveloper/wikimedia-history-dump-scraper.git#node"
+    "url": "git+https://github.com/euberdeveloper/mediawiki-history-dumps-scraper.git#node"
   },
   "files": [
     "package.json",
