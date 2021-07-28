@@ -5,7 +5,7 @@ export * from './types';
 export { WIKI_URL };
 
 /**
- * Fetches the dumps of a wiki of the wikimedia history dump
+ * Fetches the dumps of a wiki of the mediawiki history dumps
  * @param version The version of the wiki (yyyy-mm or 'latest')
  * @param wiki The wiki whose dumps will be returned (e.g. 'itwiki')
  * @param options The options of the function
@@ -62,7 +62,7 @@ export async function fetchDumps(version: string, wiki: string, options: DumpOpt
 }
 
 /**
- * Fetches the wikies of a version of the wikimedia history dump
+ * Fetches the wikies of a version of the mediawiki history dumps
  * @param version The version of the wiki (yyyy-mm or 'latest')
  * @param options The options of the function
  * @returns The fetched wikies
@@ -105,7 +105,7 @@ export async function fetchWikies(version: string, options: WikiOptions = {}): P
 }
 
 /**
- * Fetches the versions of the wikimedia history dump
+ * Fetches the versions of the mediawiki history dumps
  * @param options The options of the function
  * @returns The fetched versions
  */
@@ -136,7 +136,7 @@ export async function fetchVersions(options: VersionOptions = {}): Promise<Versi
 }
 
 /**
- * Fetches the latest version the wikimedia history dump
+ * Fetches the latest version the mediawiki history dumps
  * @param options The options of the function
  * @returns The latest version
  */

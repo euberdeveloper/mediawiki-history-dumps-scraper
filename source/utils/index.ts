@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 /**
- * The wiki url of the "Wikimedia history dump - tsv"
+ * The wiki url of the "Mediawiki history dumps - tsv"
  */
 export const WIKI_URL = 'https://dumps.wikimedia.org/other/mediawiki_history';
 
