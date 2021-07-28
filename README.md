@@ -117,3 +117,88 @@ Would be (as of July 2021):
     }
 ]
 ```
+
+## API
+
+### `WIKI_URL`
+
+It is a constant containing the url of the root of the datasets site
+
+### `fetch_latest_version(*, wikies, lang, wikitype, dumps, start, end)`
+
+Fetches the last version of the mediawiki history dumps.
+
+The version is the year-month of the release of the dumps
+
+Keyword parameters:
+* __wikies__ (_bool, default=False)_: If for each returned version the wikies will be fetched
+* __lang__ _(str, default=None)_: If the wikies argument is True, the language of the wikies to return (a wiki name starts with the language).
+* __wikitype__ _(str, default=None)_: If the wikies argument is True, the wiki type of the wikies to return (a wiki name ends with the wiki type).
+* __dumps__ _(bool, default=false)_: If for each returned wiki the wikies will be fetched
+* __start__ _(date, default=None)_: If the wikies and dumps arguments are True, retrieve only the dumps newer than this date
+* __end__ _(date, default=None)_: If the wikies and dumps arguments are True, retrieve only the dumps older than this date
+
+Returns a dict with:
+*  `version` _(str)_ for the version year-month
+*  `url` _(str)_ for the url of that version. 
+*  `wikies` will contain the fetched wikies if the argument was set to True.  
+If no version is found, `None` is returned.
+
+### `fetch_versions(*, wikies, lang, wikitype, dumps, start, end)`
+
+Fetch the versions of the mediawiki history dumps
+
+The versions are the year-month of the release of the dumps
+
+Keyword parameters:
+* __wikies__ (_bool, default=False)_: If for each returned version the wikies will be fetched
+* __lang__ _(str, default=None)_: If the wikies argument is True, the language of the wikies to return (a wiki name starts with the language).
+* __wikitype__ _(str, default=None)_: If the wikies argument is True, the wiki type of the wikies to return (a wiki name ends with the wiki type).
+* __dumps__ _(bool, default=false)_: If for each returned wiki the wikies will be fetched
+* __start__ _(date, default=None)_: If the wikies and dumps arguments are True, retrieve only the dumps newer than this date
+* __end__ _(date, default=None)_: If the wikies and dumps arguments are True, retrieve only the dumps older than this date
+
+Returns a list of dicts with:
+* `version` _(str)_ for the version year-month
+* `url` _(str)_ for the url of that version. 
+* `wikies` will contain the fetched wikies if the argument was set to True (see *fetch_wikies* to see the result).
+
+### `fetch_wikies(version, /, *, lang, wikitype, dumps, start, end)`
+
+Fetch the wikies of a version of the mediawiki history dumps
+
+Parameters:
+* version _(str)_: The version whose wikies will be returned. If "latest" is passed, the latest version is retrieved.
+
+Keyword parameters:
+* lang _(str, default=None)_: The language of the wikies to return (a wiki name starts with the language).
+* wikitype _(str, default=None)_: The wiki type of the wikies to return (a wiki name ends with the wiki type).
+* dumps _(bool, default=false)_: If for each returned wiki the dumps will be fetched
+* start _(date, default=None)_: If the dumps argument is True, retrieve only the dumps newer than this date
+* end _(date, default=None)_: If the dumps argument is True, retrieve only the dumps older than this date
+
+Returns a list of dicts with:
+* `wiki` _(str)_ for the wiki name
+* `url` _(str)_ for the url of that wiki. 
+In addition, if the `dumps` argument is True, a `dumps` (list) field contain the fetched dumps (see *fetch_dumps* to see the reuslt).
+
+### `fetch_dumps(version, wiki, /, *, start, end)`
+
+Fetch the dumps of a wiki of the mediawiki history dumps
+
+Parameters:
+* version _(str)_: The version of the wiki
+* wiki _(str)_: The wiki whose dumps will be returned
+
+Keyword parameters:
+* start _(date, default=None)_: Retrieve only the dumps newer than this date
+* end _(date, default=None)_: Retrieve only the dumps older than this date
+
+Returns a list of dicts with:
+* `filename` _(str)_ for dump file name
+* `time` _(str)_ for the time of the data (`'all-time'`, year or year-month
+* `lastUpdate` _(datetime)_ for the last update date
+* `bytes` _(int)_ for the size in bytes of the file
+* `from` _(date)_ for the start date of the data
+* `to` _(date)_ for the end date of the data
+* `url` _(str)_ the url of the file
