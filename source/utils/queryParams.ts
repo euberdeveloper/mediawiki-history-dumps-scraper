@@ -1,4 +1,4 @@
-import { DumpOptions, VersionOptions, WikiOptions } from 'whdtscraper';
+import { DumpOptions, VersionOptions, WikiOptions } from 'mhdscraper';
 
 function extractQueryParam(
     queryParams: Record<string, string | string[] | undefined>,
