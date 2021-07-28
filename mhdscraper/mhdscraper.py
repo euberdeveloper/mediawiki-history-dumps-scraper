@@ -3,7 +3,7 @@ import requests
 from datetime import datetime, date, timedelta
 from typing import Optional, Any, Union, Literal
 
-WIKI_URL = 'https://dumps.mediawiki.org/other/mediawiki_history'
+WIKI_URL = 'https://dumps.wikimedia.org/other/mediawiki_history'
 
 
 def _scrape(url: str, regex: str) -> list[str]:
