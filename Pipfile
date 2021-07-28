@@ -7,7 +7,7 @@ verify_ssl = true
 fastapi = "*"
 gunicorn = "*"
 uvicorn = {extras = ["standard"], version = "*"}
-whdtscraper = "*"
+mhdscraper = "*"
 
 [dev-packages]
 

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "319262ca6967a4526dd0c50ba8940a6b1a6b4dfbf63bef923b66569a4c8cbcf9"
+            "sha256": "db8f6b862211a0ac41f1143a66ca75503686660140d36349fb220d5e269181f6"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -98,6 +98,14 @@
             ],
             "markers": "python_version >= '3'",
             "version": "==3.2"
+        },
+        "mhdscraper": {
+            "hashes": [
+                "sha256:4e93f50c696ec91eedb8c6eff196ecf58531847391d4d7d6c6a2f9439e90d3a4",
+                "sha256:7a07c7a76209cc4d47481d5aa4d86352cd0365f7221fd7b0b26b5eedc070a2d2"
+            ],
+            "index": "pypi",
+            "version": "==1.0.0"
         },
         "pydantic": {
             "hashes": [
@@ -197,7 +205,7 @@
                 "sha256:39fb8672126159acb139a7718dd10806104dec1e2f0f6c88aab05d17df10c8d4",
                 "sha256:f57b4c16c62fa2760b7e3d97c35b255512fb6b59a259730f36ba32ce9f8e342f"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4'",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4.0'",
             "version": "==1.26.6"
         },
         "uvicorn": {
@@ -270,14 +278,6 @@
                 "sha256:f68c352a68e5fdf1e97288d5cec9296664c590c25932a8476224124aaf90dbcd"
             ],
             "version": "==9.1"
-        },
-        "whdtscraper": {
-            "hashes": [
-                "sha256:33875fc15af5b9fe7d148a099a1e9b2c1316a2ebd57a6459f2cd1092f21030c4",
-                "sha256:8be1aed480b93b62269ae9b307b644f20df795b0937a98d3b6397d674a45e0dd"
-            ],
-            "index": "pypi",
-            "version": "==1.0.3"
         }
     },
     "develop": {}
