@@ -1,0 +1,9 @@
+.git
+.github
+.vscode
+docs
+node_modules
+.eslintignore
+.eslintrc.js
+.gitignore
+.prettierrc.js
