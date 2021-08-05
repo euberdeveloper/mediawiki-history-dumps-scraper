@@ -1,4 +1,4 @@
-# mediawiki-history-dumps-scraper
+# mediawiki-history-dumps-scraper 
 
 This are the **python api** of "Mediawiki history dumps scraper", refer to the [main branch](https://github.com/euberdeveloper/mediawiki-history-dumps-scraper) to see in general the projects' purpose.
 
